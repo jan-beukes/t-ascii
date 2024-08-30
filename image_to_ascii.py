@@ -4,7 +4,7 @@ from color import Color
 
 ## CONSTANTS
 darkness_table = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
-downscale = 0.05
+downscale = 0.1
 GRAYSCALE_FACTOR =  (0.299,0.587,0.114)
 ASCII_FACTOR = (len(darkness_table)-1)/255
 SQUISH_FACTOR = 0.6
@@ -12,8 +12,12 @@ SQUISH_FACTOR = 0.6
 ## Get input
 try:
     image = picture.Picture(sys.argv[1])
-    if len(sys.argv == 3):
-        if sys.argv[0]
+    if len(sys.argv) > 2:
+        if sys.argv[2] == '-s':
+            downscale = float(sys.argv[3])
+        else:
+            raise IndexError
+            
     out_mode = input('Output [t] for terminal [f] for file: ')
     if out_mode.lower() not in ['t','f']:
         exit()
