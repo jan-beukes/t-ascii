@@ -27,6 +27,8 @@ QQQQQQ.  IIliiiiiiiiiiiiiiiiiii>~lIIIII   IIIIII
 QQQQQQZ  .IIll~iiiiiiiiiiiiiii>llIIIIII   IIIIIl   
 QQQQQQQ   lIIIIIIIIIIIIIIIIIIIIIIIIIIII   IIIII   .
 ```
+![](images/clip.gif)
+
 # How to use
 
 ## from image
@@ -37,7 +39,6 @@ python ascii_art.py image.png -s [scale 0-1] -t [table 0,1]
 ```
 
 ## from webcam
-> _Reccomended to use scale 0 - 0.5_
 ```
 python ascii_webcam.py
 
