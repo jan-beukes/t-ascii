@@ -1,14 +1,13 @@
 import cv2
 import sys
 import os
-from color import Color
 
 ## CONSTANTS
 darkness_table = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 #darkness_table = " .',:;xlxokXdO0KN"
 GRAYSCALE_FACTOR =  (0.299,0.587,0.114)
 ASCII_FACTOR = (len(darkness_table)-1)/255 # factor to get ascii character from brightness
-SQUISH_FACTOR = 0.6 # decrease height to better match original
+SQUISH_FACTOR = 0.5 # decrease height to better match original
 
 # Create ascii array 
 def get_art(image, downscale):
@@ -31,7 +30,7 @@ def output_art(art, out_mode):
         squish = int(art_height * SQUISH_FACTOR)
         os.system("clear")
         if out_mode == 't': print('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))), end='')
-        if out_mode == 'f': file.write('\n'.join((''.join(row) for row in art)), end='')
+        if out_mode == 'f': file.write('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))))
 def main():
     downscale = 0.1
     # Get input
