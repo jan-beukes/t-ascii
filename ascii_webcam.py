@@ -5,6 +5,7 @@ import tkinter as tk
 import time
 
 root = tk.Tk()
+cam_index = 0
 downscale = 0.2
 table = 0
 
@@ -18,6 +19,8 @@ try:
                 downscale = float(args[i+1])
             elif args[i] == '-t':
                 table = int(args[i+1])
+            elif args[i] == '-c':
+                cam_index = int(args[i+1])
             else:
                 raise IndexError
             
@@ -32,7 +35,7 @@ root.wm_attributes("-type","dock")
 root.geometry(f"{80}x{30}+0+0")    
     
         
-vid = cv2.VideoCapture(0)
+vid = cv2.VideoCapture(cam_index)
 label = tk.Label(root, text="FPS: ")
 
 if vid.read()[1] is None:

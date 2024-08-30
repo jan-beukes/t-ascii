@@ -36,7 +36,6 @@ def main():
     table = 0
     # Get input
     try:
-        
         image = cv2.imread(sys.argv[1])
         if len(sys.argv) > 2:
             arg_size = len(sys.argv) - 2
