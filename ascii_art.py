@@ -1,34 +1,36 @@
 import cv2
 import sys
+import numpy as np
 import os
 
 ## CONSTANTS
 ASCII_TABLES = (" .',:;xlxokXdO0KN"," .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$")
-GRAYSCALE_FACTOR =  (0.299,0.587,0.114)
+GRAYSCALE_WEIGHTS =  np.array((0.299,0.587,0.114))
 SQUISH_FACTOR = 0.5 # decrease height to better match original
 
 # Create ascii array 
 def get_art(image, downscale, t):
-    width,height = image.shape[0],image.shape[1]
-    art_width, art_height = int(downscale*height), int(downscale*width)
-    art = [""]*art_height
+    image = cv2.resize(image, (int(image.shape[1]*downscale), int(image.shape[0]*downscale*SQUISH_FACTOR)))
+    width,height = image.shape[1], image.shape[0]
+    art = [""]*height
     
     #loop through art array and select ascii from relative pixel
-    for y in range(art_height):
-        for x in range(art_width):
-            c = image[int((1/downscale)*y)][int((1/downscale)*x)]
-            grey = c[0]*GRAYSCALE_FACTOR[0] + c[1]*GRAYSCALE_FACTOR[1] + c[2]*GRAYSCALE_FACTOR[2]
-            char = ASCII_TABLES[t][int(grey * (len(ASCII_TABLES[t])-1)/255)] # grey value * factor to get correct ascii character from brightness
+    grey = np.dot(image,GRAYSCALE_WEIGHTS)
+    for y in range(height):
+        for x in range(width):
+            char = ASCII_TABLES[t][int(grey[y][x] * (len(ASCII_TABLES[t])-1)/255)] # grey value * factor to get correct ascii character from brightness
             art[y] += char
     return art       
 
 def output_art(art, out_mode):
-    art_height = len(art)
-    with open("out.txt","w") as file: 
-        squish = int(art_height * SQUISH_FACTOR)
-        #os.system("clear")
-        if out_mode == 't': print('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))), end='')
-        if out_mode == 'f': file.write('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))))
+    height = len(art)
+    if out_mode == 'f': 
+        with open("out.txt","w") as file: 
+            file.write('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))))
+            return
+    #os.system("clear")
+    if out_mode == 't': print('\n'.join((''.join(art[row]) for row in range(height))), end='')
+        
 def main():
     downscale = 0.1
     table = 0

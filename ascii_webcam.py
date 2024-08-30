@@ -5,14 +5,11 @@ import tkinter as tk
 import time
 
 root = tk.Tk()
-root.minsize(120, 60)
-root.maxsize(120, 60)
-
 downscale = 0.2
 table = 0
 
+# args
 try:
-    
     if len(sys.argv) > 1:
         arg_size = len(sys.argv) - 1
         args = sys.argv[1:]
@@ -30,11 +27,17 @@ except FileNotFoundError:
 except (IndexError, TypeError) as e:
     print("Invalid arguments: ", e)
     exit()
+
+root.wm_attributes("-type","dock")
+root.geometry(f"{80}x{30}+0+0")    
+    
         
 vid = cv2.VideoCapture(0)
-#FPS
 label = tk.Label(root, text="FPS: ")
 
+if vid.read()[1] is None:
+    print("Camera not found")
+    exit()
 while True:
     ret, frame = vid.read()
     begin = time.time()
@@ -43,12 +46,10 @@ while True:
     end = time.time()
     
     fps = int(1/(end-begin))
-    
     label.config(text="FPS: " + str(fps))
     label.pack()
     root.update()
+    
     if cv2.waitKey(1) & 0xFF == ord('q'):
          break
-    
 vid.release()
-cv2.destroyAllWindows()
