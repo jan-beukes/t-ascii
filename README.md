@@ -1,4 +1,4 @@
-# Epic ascii from image
+# Epic ascii from images/camera
 
 ```
 QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
