@@ -7,13 +7,29 @@ import time
 root = tk.Tk()
 root.minsize(120, 60)
 root.maxsize(120, 60)
-downscale = 0.2
 
-if len(sys.argv) > 1:
-    try:
-        downscale = float(sys.argv[1])
-    except TypeError:
-        print("invalid args")
+downscale = 0.2
+table = 0
+
+try:
+    
+    if len(sys.argv) > 1:
+        arg_size = len(sys.argv) - 1
+        args = sys.argv[1:]
+        for i in range(0,arg_size,2):
+            if args[i] == '-s':
+                downscale = float(args[i+1])
+            elif args[i] == '-t':
+                table = int(args[i+1])
+            else:
+                raise IndexError
+            
+except FileNotFoundError:
+    print(f"image {sys.argv[1]} not found")
+    exit()
+except (IndexError, TypeError) as e:
+    print("Invalid arguments: ", e)
+    exit()
         
 vid = cv2.VideoCapture(0)
 #FPS
@@ -22,7 +38,7 @@ label = tk.Label(root, text="FPS: ")
 while True:
     ret, frame = vid.read()
     begin = time.time()
-    art = ascii_art.get_art(frame, downscale)
+    art = ascii_art.get_art(frame, downscale, table)
     ascii_art.output_art(art, 't')
     end = time.time()
     
