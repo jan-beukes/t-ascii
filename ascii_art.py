@@ -3,8 +3,8 @@ import sys
 import os
 
 ## CONSTANTS
-darkness_table = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
-#darkness_table = " .',:;xlxokXdO0KN"
+#darkness_table = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+darkness_table = " .',:;xlxokXdO0KN"
 GRAYSCALE_FACTOR =  (0.299,0.587,0.114)
 ASCII_FACTOR = (len(darkness_table)-1)/255 # factor to get ascii character from brightness
 SQUISH_FACTOR = 0.5 # decrease height to better match original
@@ -28,7 +28,7 @@ def output_art(art, out_mode):
     art_height = len(art)
     with open("out.txt","w") as file: 
         squish = int(art_height * SQUISH_FACTOR)
-        os.system("clear")
+        #os.system("clear")
         if out_mode == 't': print('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))), end='')
         if out_mode == 'f': file.write('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))))
 def main():
