@@ -11,7 +11,8 @@ SQUISH_FACTOR = 0.5 # decrease height to better match original
 # Create ascii array 
 def get_art(image, downscale, t):
     image = cv2.resize(image, (int(image.shape[1]*downscale), int(image.shape[0]*downscale*SQUISH_FACTOR)))
-    width,height = image.shape[1], image.shape[0]
+    width = image.shape[1]
+    height = image.shape[0]
     art = [""]*height
     
     #loop through art array and select ascii from relative pixel
@@ -22,7 +23,7 @@ def get_art(image, downscale, t):
             art[y] += char
     return art       
 
-def output_art(art, out_mode):
+def output_art(art: list[str], out_mode: str):
     height = len(art)
     if out_mode == 'f': 
         with open("out.txt","w") as file: 
