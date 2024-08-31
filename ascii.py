@@ -11,8 +11,7 @@ SQUISH_FACTOR = 0.5 # decrease height to better match original
 # Create ascii array 
 def get_art(image, downscale, t):
     image = cv2.resize(image, (int(image.shape[1]*downscale), int(image.shape[0]*downscale*SQUISH_FACTOR)))
-    width = image.shape[1]
-    height = image.shape[0]
+    width,height = image.shape[1], image.shape[0]
     art = [""]*height
     
     #loop through art array and select ascii from relative pixel
