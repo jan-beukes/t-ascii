@@ -10,7 +10,12 @@ SQUISH_FACTOR = 0.5 # decrease height to better match original
 
 # Create ascii array 
 def get_art(image, downscale, t):
-    image = cv2.resize(image, (int(image.shape[1]*downscale), int(image.shape[0]*downscale*SQUISH_FACTOR)))
+    # Sus check for stream ended
+    try:
+        image = cv2.resize(image, (int(image.shape[1]*downscale), int(image.shape[0]*downscale*SQUISH_FACTOR)))
+    except AttributeError:
+        exit()
+        
     width,height = image.shape[1], image.shape[0]
     art = [""]*height
     

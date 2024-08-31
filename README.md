@@ -1,4 +1,4 @@
-# Epic ascii from images/camera
+# Epic ascii from image or camera/video
 
 ```
 QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
@@ -27,7 +27,7 @@ QQQQQQ.  IIliiiiiiiiiiiiiiiiiii>~lIIIII   IIIIII
 QQQQQQZ  .IIll~iiiiiiiiiiiiiii>llIIIIII   IIIIIl   
 QQQQQQQ   lIIIIIIIIIIIIIIIIIIIIIIIIIIII   IIIII   .
 ```
-![](images/clip.gif)
+
 
 # How to use
 
@@ -36,13 +36,23 @@ QQQQQQQ   lIIIIIIIIIIIIIIIIIIIIIIIIIIII   IIIII   .
 python ascii.py image.png
 
 # flags
-python ascii.py image.png -s [scale 0-1] -t [table 0,1]
+-s [scale 0-1] -t [table 0,1]
 ```
 
 ## from webcam
 ```
-python webcam.py
+python video.py
 
 # flags
-python webcam.py -s [scale 0-1] -c [cam_index 0-9?] -t [table 0,1]
+-s [scale 0-1] -c [cam_index 0-9?] -t [table 0,1]
+
+```
+
+## from video
+```
+python video.py -v video.mp4
+
+# flags
+-s [scale 0-1] -t [table 0,1]
+
 ```
