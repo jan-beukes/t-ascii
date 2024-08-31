@@ -1,6 +1,6 @@
 import sys
 import cv2
-import ascii_art
+import ascii
 import tkinter as tk
 import time
 
@@ -34,9 +34,9 @@ except (IndexError, TypeError) as e:
 root.wm_attributes("-type","dock")
 root.geometry(f"{80}x{30}+0+0")    
     
-        
 vid = cv2.VideoCapture(cam_index)
 label = tk.Label(root, text="FPS: ")
+
 
 if vid.read()[1] is None:
     print("Camera not found")
@@ -44,11 +44,15 @@ if vid.read()[1] is None:
 while True:
     ret, frame = vid.read()
     begin = time.time()
-    art = ascii_art.get_art(frame, downscale, table)
-    ascii_art.output_art(art, 't')
+    art = ascii.get_art(frame, downscale, table)
+    ascii.output_art(art, 't')
     end = time.time()
     
-    fps = int(1/(end-begin))
+     # LOCK FPS
+    # if (end-begin) < (1/60):
+    #     time.sleep(1/60 - (end-begin))
+    
+    fps = int(1/(time.time()-begin))
     label.config(text="FPS: " + str(fps))
     label.pack()
     root.update()

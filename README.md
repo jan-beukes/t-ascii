@@ -33,14 +33,16 @@ QQQQQQQ   lIIIIIIIIIIIIIIIIIIIIIIIIIIII   IIIII   .
 
 ## from image
 ```
-python ascii_art.py image.png
+python ascii.py image.png
 
-python ascii_art.py image.png -s [scale 0-1] -t [table 0,1]
+# flags
+python ascii.py image.png -s [scale 0-1] -t [table 0,1]
 ```
 
 ## from webcam
 ```
-python ascii_webcam.py
+python webcam.py
 
-python ascii_webcam.py -s [scale 0-1] -t [table 0,1]
+# flags
+python webcam.py -s [scale 0-1] -c [cam_index 0-9?] -t [table 0,1]
 ```

@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 ## CONSTANTS
-ASCII_TABLES = (" .',:;xlxokXdO0KN"," .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$")
+ASCII_TABLES = (" .',:;xlxokXdO0KN","            .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$")
 GRAYSCALE_WEIGHTS =  np.array((0.299,0.587,0.114))
 SQUISH_FACTOR = 0.5 # decrease height to better match original
 
@@ -26,10 +26,13 @@ def output_art(art, out_mode):
     height = len(art)
     if out_mode == 'f': 
         with open("out.txt","w") as file: 
-            file.write('\n'.join((''.join(art[int(row/SQUISH_FACTOR)]) for row in range(squish))))
+            file.write('\n'.join((''.join(art[row]) for row in range(height))))
             return
     #os.system("clear")
-    if out_mode == 't': print('\n'.join((''.join(art[row]) for row in range(height))), end='')
+    if out_mode == 't': 
+        print('\n'.join((art[row] for row in range(height))), end='')
+        print("")       
+        
         
 def main():
     downscale = 0.1
