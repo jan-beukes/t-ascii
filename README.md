@@ -1,4 +1,4 @@
-# Epic ascii from image or camera/video
+# Converts images or Videos/Camera feeds to ascii
 
 ```
 QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
