@@ -1,15 +1,12 @@
 import socket
 import threading
 
-reciever = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-reciever.bind(("",9999))
+reciever = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+reciever.bind(("129.151.163.251",80))
+reciever.listen()
 
-def recieve():
-    while True:
-        try:
-            message,_ = reciever.recvfrom(1024)
-            print(message.decode())
-        except Exception:
-            print("error recieving")
-            
-recieve()
+print("waiting for connectiion...")
+while True:
+    client, address = reciever.accept()
+    print(address, ": " + client.recv(1024).decode())
+        
