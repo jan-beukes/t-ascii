@@ -31,8 +31,7 @@ def output_art(art: list[str], out_mode: str):
     #os.system("clear")
     if out_mode == 't': 
         print('\n'.join((art[row] for row in range(height))), end='')
-        print("")       
-        
+      
         
 def main():
     downscale = 0.1
