@@ -27,13 +27,14 @@ def get_art(image, downscale, t):
             art[y] += char
     return art       
 
-def output_art(art, out_mode):
+def output_art(art, out_mode, clear=False):
     height = len(art)
     if out_mode == 'f': 
         with open("out.txt","w") as file: 
             file.write('\n'.join((''.join(art[row]) for row in range(height))))
             return
-    #os.system("clear")
+    if clear:
+        os.system("clear")
     if out_mode == 't': 
         print('\n'.join((art[row] for row in range(height))), end='')
         print("")       

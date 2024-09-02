@@ -10,8 +10,10 @@ root = tk.Tk()
 global cam_index; cam_index = 0
 global downscale; downscale = 0.2
 global table; table = 0
+cam_given = False
 running = True
 is_video = False
+global clear; clear = False
 fps_limit = 0
 
 # Arguments
@@ -26,6 +28,7 @@ try:
                 table = int(args[i+1])
             elif args[i] == '-c': # Camera
                 cam_index = int(args[i+1])
+                cam_given = True
             elif args[i] == '-v': # Video
                     cam_index = args[i+1]
                     if not os.path.isfile(cam_index):
@@ -54,18 +57,33 @@ def on_camera():
         running = False
         print(f"invalid index {camera_entry.get()}")
         exit()
-    
+def on_clear():
+    global clear;
+    clear = not clear
 global vid 
-vid = cv2.VideoCapture(cam_index)
-vid.read()
-if vid.read()[1] is None:
-    print("Video stream not found")
-    exit()
+
 if is_video:
-    fps_limit = vid.get(cv2.CAP_PROP_FPS)
+    vid = cv2.VideoCapture(i)
+    vid.read()
+    if vid.read()[1] is None:
+        print("Video stream not found")
+        exit()
+elif not cam_given:
+    for i in range(4):
+        vid = cv2.VideoCapture(i)
+        if not vid.read()[0]:
+            print(i, " not work")
+            continue
+        cam_index = i
+        break
+    else:
+        print("Video stream not found")
+        exit()
+else:
+    vid = cv2.VideoCapture(cam_index) 
 
 # GUI SETTINGS
-root.geometry(f"{120}x{180}+0+0")
+root.geometry(f"{120}x{220}+0+0")
 
 root.resizable(False,False)
 label = tk.Label(root, text="FPS: ")
@@ -74,6 +92,7 @@ scale = tk.Scale(root,variable=downscale, orient="horizontal", from_=0.01, to=1.
 camera_lable = tk.Label(root, text="Camera")
 camera_entry = tk.Entry(root)
 camera_buton = tk.Button(root, text="Set", command=on_camera)
+clear_button = tk.Button(root, text="Clear Mode", command=on_clear)
 scale.set(downscale)
 
 while running:
@@ -86,7 +105,7 @@ while running:
         
     begin = time.time()
     art = ascii.get_art(frame, downscale, table)
-    ascii.output_art(art, 't')
+    ascii.output_art(art, 't', clear)
     end = time.time()
     
     # fps cap for videos
@@ -100,6 +119,7 @@ while running:
     camera_lable.pack()
     camera_entry.pack()
     camera_buton.pack()
+    clear_button.pack()
     root.update()
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
