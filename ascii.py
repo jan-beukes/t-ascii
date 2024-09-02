@@ -7,6 +7,7 @@ import os
 ASCII_TABLES = (" .',:;xlxokXdO0KN","            .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$")
 GRAYSCALE_WEIGHTS =  np.array((0.299,0.587,0.114))
 SQUISH_FACTOR = 0.5 # decrease height to better match original
+global windows; windows = False
 
 # Create ascii array 
 def get_art(image, downscale, t):
@@ -34,13 +35,18 @@ def output_art(art, out_mode, clear=False):
             file.write('\n'.join((''.join(art[row]) for row in range(height))))
             return
     if clear:
-        os.system("clear")
+        if windows:
+            os.system("cls")
+        else:
+            os.system("clear")
     if out_mode == 't': 
         print('\n'.join((art[row] for row in range(height))), end='')
         print("")       
         
         
 def main():
+    if os.name == 'nt':
+        global windows; windows == True
     downscale = 0.1
     table = 0
     # Get input

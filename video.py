@@ -63,11 +63,12 @@ def on_clear():
 global vid 
 
 if is_video:
-    vid = cv2.VideoCapture(i)
+    vid = cv2.VideoCapture(cam_index)
     vid.read()
     if vid.read()[1] is None:
         print("Video stream not found")
         exit()
+    fps_limit = vid.get(cv2.CAP_PROP_FPS)
 elif not cam_given:
     for i in range(4):
         vid = cv2.VideoCapture(i)
