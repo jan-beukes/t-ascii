@@ -45,7 +45,12 @@ except (IndexError, TypeError) as e:
     exit()    
     
 def on_button():
-    global table; table = 1 - table
+    global table; 
+    if table < len(ascii.ASCII_TABLES) - 1:
+        table += 1
+    else:
+        table = 0
+    
 
 def on_camera():
     global cam_index, vid
