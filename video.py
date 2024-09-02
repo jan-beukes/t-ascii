@@ -50,8 +50,6 @@ def on_button():
         table += 1
     else:
         table = 0
-    
-
 def on_camera():
     global cam_index, vid
     try:
@@ -67,6 +65,7 @@ def on_clear():
     clear = not clear
 global vid 
 
+# Video stream validate
 if is_video:
     vid = cv2.VideoCapture(cam_index)
     vid.read()
@@ -90,7 +89,6 @@ else:
 
 # GUI SETTINGS
 root.geometry(f"{120}x{220}+0+0")
-
 root.resizable(False,False)
 label = tk.Label(root, text="FPS: ")
 t_button = tk.Button(root, text="Change", command=on_button)
@@ -117,7 +115,9 @@ while running:
     # fps cap for videos
     if is_video and (end-begin) < 1/fps_limit:
         time.sleep(1/fps_limit - (end-begin))
-    fps = int(1/(time.time()-begin))
+        
+    #GUI Update    
+    fps = int(1/(end-begin))
     label.config(text="FPS: " + str(fps))
     label.pack()
     t_button.pack()
