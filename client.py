@@ -10,7 +10,7 @@ PACKET_SIZE = 20000
 ip = "129.151.163.251"
 downscale = 0.1
 cam_index = 0
-packet_rate = 30
+packet_rate = 24
 
 
 sender = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -53,6 +53,4 @@ while True:
 
     # Recieve
     print(sender.recv(PACKET_SIZE).decode())
-
-
-
+    
