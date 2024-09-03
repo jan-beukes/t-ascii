@@ -1,35 +1,92 @@
-# Converts images or Videos/Camera feeds to ascii
+# Ascii Webcam/Video
+Scuffed video calls are also possible
 
 ```
-QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
-QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
-QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
-QQQQQQQQQQQQQQQQQQm              ZQQQQQQQQQQQQQQQQQ
-QQQQQQQQQQQQQQ0                     OQQQQQQQQQQQQQQ
-QQQQQQQQQQQQL       >iiiiiiiiiii<     QQQQQQQQQQQQQ
-QQQQQQQQQQQ     >>iiiiiiiiiiiiiiiii    0QQQQQQQQQQQ
-QQQQQQQQQZ    >~<>>>iiiiiiiiiiiiiiii    QQQQQQQQQQQ
-QQQQQQQLL                   <iiiiiii;   ZQQQQQQQQQQ
-QQQQQQ0     ^hoahaaaaahh:     iiiiii>l   QQQQQQQQQQ
-QQQQQ    hh$@$$$$$$$@aaaaa))   >iiiiil   0QQQQQQQQQ
-QQQQ   (aaB@@@$@@hhhaaaaa0))   'iiii>I    .Z0QQQQQQ
-QQQQ   |aaahaaaaaaaaaaah))))   .iiiiiII          QQ
-QQQQ   1))))))))()))1))))))1   >iiiiiII   iii>    Q
-QQQQm    1)))))))))))))))){   <iiiiiiII   iiiii   Q
-QQQQQ0       i))))))))))     >iiiiiiiII   lIlIi   O
-QQQQQQ                    ~iiiiiiiii<II   IIIII`   
-QQQQQQ    iiiii>i>i>iiiiiiiiiiiiiiiiIII   lIIIIl   
-QQQQQQ   "iiiiiiiiiiiiiiiiiiiiiiiii>lII   :IIIII   
-QQQQQQ   IiiiiiiiiiiiiiiiiiiiiiiiiilIII   lIIIIl   
-QQQQQQ   l~iiiiiiiiiiiiiiiiiiiiiii;IIII   lIIIII   
-QQQQQQ   II>iiiiiiiiiiiiiiiiiiii>!IIIII   lIIIII   
-QQQQQQ.  IIliiiiiiiiiiiiiiiiiii>~lIIIII   IIIIII   
-QQQQQQZ  .IIll~iiiiiiiiiiiiiii>llIIIIII   IIIIIl   
-QQQQQQQ   lIIIIIIIIIIIIIIIIIIIIIIIIIIII   IIIII   .
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk;.                 ..'':xkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkl                                    kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkx                                           ,kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkko                                                 xkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkX                                                      'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk;                   .,,''''''''''''''''''',,               okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkX                  ,,,''''''''''''''''''''''''''',,            xkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkk               '',,,''''''''''''''''''''''''''''',,''',          ,kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkX              ,,,'''''''''''''''''''''''''''''''''''''''',,         ,kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkk              '','''''''''''''''''''''''''''''''''''''''''',','        lkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkk             '''''''''''''''''','''''''''''''''''''''''''''''''''        kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkk           .',,,,,,,,,,,,'','''',''''''''''''''''''''''''''''''''''        Xkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkk'                                       .,,,'''''''''''''''''''''''..        kkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkX                                             ',,,'''''''''''''''''','        'kkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkX                                                  .'',,'''''''''''''''''        Xkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkl                                                      ',,,''''''''''''''''.       ,kkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkx              'oXOOOOOOOOOOOOOOOOOOOOOOOOOo'              '''''''''''''''',''        kkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkk            XOOOOOO0KKKNKNNNKKNKKKKOOOOOOOOOOOOo;;;;         ,''''''''''''',,''        okkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkk          OOOO0KKKKNNNNNNNNNNNNNNNNKKOOOOOOOOOOOOX;;;;;        .''''''''''',''''.       'kkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkko        .OOOOKKKKKKKNNNNNNNNNNNNNNNNKK0OOOOOOOOOOOO;;;;;;        ,','''''''''','''        kkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkk        OOOOOKKKKNNKKKKKKKKKKKNKKKKKKKKOOOOOOOOOOOOO;;;;;;'        '''''''''''','''        Xkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkk       .OOOOOOOKKKKKKKKKKNKKKKKK00OOOOOOOOOOOOOOOOOOd;;;;;;:        '''''''''''''''''        ':;xXXkkkkkkkkkkkkkkkkkkk
+kkkkkkkkk:       OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOx;;;;;x;        ','''''''''',,'''.                   .xkkkkkkkkkkk
+kkkkkkkkk       ,OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOk;;;;;;;;,        '''''''''''',,''''                        kkkkkkkk
+kkkkkkkkX       ;;xOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOd;;;;;;;;;;.        ',''''''''''''''''                         xkkkkkk
+kkkkkkkkX       ,;;;;;oXXdOOOOOOOOOOOOOOOOOOOOOOOOOOOOOdx;;;;;;;;;;;;        ','''''''''''''''''                          xkkkkk
+kkkkkkkkk        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;.        ,''''''''''''''''''        ''''''''',         kkkkk
+kkkkkkkkk.        :;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;         ,,'''''''''''','''''        ,'''''''',',       xkkkk
+kkkkkkkkkX          :;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;         '''''''''''''''',''''        ,'''''''''''        kkkk
+kkkkkkkkkko           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.         ,'''''''''''''''''''''        '',,''''''''.       lkkk
+kkkkkkkkkkko              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,           ,',''''''''''''''''''''        .,,''','',',,        kkk
+kkkkkkkkkkkkX                  .,;;;;;;;;;;;;;;;;;;;;;;;;;'             '',,'''''''''''','''''''         ''''''''',''        kkk
+kkkkkkkkkkkkkkk                        .,:;;;;;;;;:'                  ,,'''''''''''''''''','''''         ''''''''''''        Xkk
+kkkkkkkkkkkkkkk                                                    ,,','''''''''''''''''',''''''         ''''''''''''.       kkk
+kkkkkkkkkkkkkkk        ',                                     ',,,'''''''''''''''''''''','.'''''         ''''''''''''.       ;kk
+kkkkkkkkkkkkkkk        ,','',,'.                        ',',''''''''''''''''''''''''''''',''''''         '''''''''''''        kk
+kkkkkkkkkkkkkkX        ,''''''''''''',',,,,,',,,'''''''''''''''''''''''''''''''''''''''''.''''''         '''''''''''''        kk
+kkkkkkkkkkkkkkX        '''''''''''''''''''''''''''','''''''''''''''''''''''''''''''''''','''''''         '''''''''''''        kk
+kkkkkkkkkkkkkkX        ,''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''.'''''''         '''''''''''''        Xk
+kkkkkkkkkkkkkkX        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''',''''''''.        '''''''''''''        xk
+kkkkkkkkkkkkkkX       .,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''',.''''''''.        '''''''''''''        ;k
+kkkkkkkkkkkkkko       '.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''','''''''''.        '''''''''''''.       :k
+kkkkkkkkkkkkkkx       '''',''''''''''''''''''''''''''''''''''''''''''''''''''''''''',,''''''''''.        '''''''''''''.       .k
+kkkkkkkkkkkkkkx       ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''.        ''''''''''''''        k
+kkkkkkkkkkkkkkx       ''',','''''''''''''''''''''''''''''''''''''''''''''''''''''','''''''''''''         ''''''''''''''        k
+kkkkkkkkkkkkkkx       ''''',''''''''''''''''''''''''''''''''''''''''''''''''''''',',''''''''''''         ''''''''''''''        k
+kkkkkkkkkkkkkko       ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''',,'''''''''''''         '''''''''''''.        k
+kkkkkkkkkkkkkkX       ''''',''''''''''''''''''''''''''''''''''''''''''''''''''''',''''''''''''''         '''''''''''''.        k
+kkkkkkkkkkkkkkX       ''''''','''''''''''''''''''''''''''''''''''''''''''''','',,'''''''''''''''         '''''''''''''         k
+kkkkkkkkkkkkkkk       '''''''','''''''''''''''''''''''''''''''''''''''''''''',',''''''''''''''''        .'''''''''''''         k
+kkkkkkkkkkkkkkk       .''''''''',''''''''''''''''''''''''''''''''''''''''''',,''''''''''''''''''        .'''''''''''''        ;k
+kkkkkkkkkkkkkkk        '''''''''''',''''''''''''''''''''''''''''''''''''',,,.'''''''''''''''''''        .'''''''''''''        Xk
+kkkkkkkkkkkkkkk,       ''''''''''''''',,''''',','''''''',,''''',,'''',''''''''''''''''''''''''''        ''''''''''''''        kk
+kkkkkkkkkkkkkkkx       .''''''''''''''''''''''.''''''''''.''''''''''''''''''''''''''''''''''''''        '''''''''''''.       ;kk
+kkkkkkkkkkkkkkkX        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''        '''''''''''''        kkk
+kkkkkkkkkkkkkkkk        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''        '''''''''''''       ;kkk
+kkkkkkkkkkkkkkkkx        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''        ''''''''''''        kkkk
+kkkkkkkkkkkkkkkkk        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''       .''''''''''         kkkkk
 ```
-
-
 # How to use
+
+## Webcam
+Gui settings are available after running video.py
+```
+python video.py
+
+# flags
+-s [scale 0-1] -c [cam_index 0-9?] -t [table 0,1]
+
+```
+## Video Call
+run client.py on 2 computers to connect, only a single call can happen at a time
+```
+python client.py
+
+# flags
+-s [scale 0-1]
+-c [cam_index 0-9?]
+```
 
 ## from image
 ```
@@ -37,15 +94,6 @@ python ascii.py image.png
 
 # flags
 -s [scale 0-1] -t [table 0,1]
-```
-
-## from webcam
-```
-python video.py
-
-# flags
--s [scale 0-1] -c [cam_index 0-9?] -t [table 0,1]
-
 ```
 
 ## from video
