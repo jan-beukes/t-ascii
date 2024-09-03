@@ -22,7 +22,7 @@ def get_art(image, downscale, t):
             art[y] += char
     return art       
 
-def output_art(art: list[str], out_mode: str):
+def output_art(art, out_mode):
     height = len(art)
     if out_mode == 'f': 
         with open("out.txt","w") as file: 
