@@ -112,12 +112,14 @@ while running:
     ascii.output_art(art, 't', clear)
     end = time.time()
     
+    frame_time = max(0.001,end-begin)
+    
     # fps cap for videos
-    if is_video and (end-begin) < 1/fps_limit:
+    if is_video and (frame_time) < 1/fps_limit:
         time.sleep(1/fps_limit - (end-begin))
         
     #GUI Update    
-    fps = int(1/(end-begin))
+    fps = int(1/(frame_time))
     label.config(text="FPS: " + str(fps))
     label.pack()
     t_button.pack()
