@@ -5,7 +5,7 @@ import os
 
 ## CONSTANTS
 ASCII_TABLES = (" .',:;xlxokXdO0KN","            .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
-                " .',\";*%&8B@$")
+                " .:,'-^*+?!|=0#X%WM@")
 GRAYSCALE_WEIGHTS =  np.array((0.299,0.587,0.114))
 SQUISH_FACTOR = 0.5 # decrease height to better match original
 global windows; windows = False
