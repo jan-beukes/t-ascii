@@ -44,6 +44,10 @@ def output_art(art, out_mode, clear=False):
         print('\n'.join((art[row] for row in range(height))), end='')
         print("")       
         
+def get_frame(art):
+    height = len(art)
+    return '\n'.join(art[row] for row in range(height))
+        
         
 def main():
     if os.name == 'nt':
