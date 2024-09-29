@@ -1,5 +1,5 @@
 # Ascii Webcam/Video
-Scuffed video calls are also possible
+~Scuffed video calls are also possible~
 
 ![](images/mario_sc.png)
 
