@@ -1,11 +1,12 @@
 import stddraw
 import pygame
+from compass import _os
 from picture import Picture
 
 global window_size
 window_size = 800
 global frame_show_ms 
-frame_show_ms = 0
+frame_show_ms = 200
 global map_size
 
 RES_PATH = "./res/"
@@ -45,7 +46,7 @@ def init_gui(_map_size):
     stddraw.setXscale(0, window_size)
     stddraw.setYscale(0, window_size)
     
-    #show_menu()
+    show_menu()
     
     # Scale for gameplay
     border = window_size/(map_size + 2)
@@ -276,7 +277,7 @@ def show_result(result: str, bees_killed, pollen_action, map_board, hidden_entit
     
     stddraw.show()
  
-def render_frame(map_board, show=True):
+def render_frame(map_board, hidden_entities, show=True):
     global frame_show_ms
     global window_size
     global map_size
@@ -289,15 +290,28 @@ def render_frame(map_board, show=True):
     
     for row in range(map_size):
         for col in range(map_size):
-            if map_board[row][col] is None or map_board[row][col] == " ":
+            if map_board[row][col] is None:
                 continue
             image = get_image(map_board[row][col])
             x = border + (col * square_size) + square_size/2
-            y = border + ((map_size-row) * square_size) + square_size/2
+            y = border + (row * square_size) + square_size/2
             
             if not image is None:
                 size = image.width()
-                stddraw.picture(image, x, y, size, size)
+                if not (row, col) in hidden_entities:
+                    stddraw.picture(image, x, y, size, size)
+                else:
+                    for i, char in enumerate(hidden_entities[(row, col)]):
+                        stddraw.picture(get_image(char), x + i*size/16, y, size, size)
+            # character was 'm'
+            else:
+                image = get_image(hidden_entities[(row, col)][0])
+                size = image.width()
+                for i, char in enumerate(hidden_entities[(row, col)]):
+                        image = get_image(char)
+                        img_cpy = Picture(size, size)
+                        img_cpy._surface = pygame.transform.rotate(image._surface, i * 90)
+                        stddraw.picture(img_cpy, x, y, size, size)
                 
     if show:
         stddraw.show(frame_show_ms)
