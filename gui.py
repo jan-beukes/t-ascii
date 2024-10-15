@@ -5,7 +5,7 @@ from picture import Picture
 global window_size
 window_size = 800
 global frame_show_ms 
-frame_show_ms = 17
+frame_show_ms = 0
 global map_size
 
 RES_PATH = "./res/"
@@ -45,7 +45,7 @@ def init_gui(_map_size):
     stddraw.setXscale(0, window_size)
     stddraw.setYscale(0, window_size)
     
-    show_menu()
+    #show_menu()
     
     # Scale for gameplay
     border = window_size/(map_size + 2)

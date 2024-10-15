@@ -14,7 +14,7 @@ cam_given = False
 running = True
 is_video = False
 global clear; clear = False
-fps_limit = 0
+fps_limit = 30
 
 # Arguments
 scale = 80
@@ -28,8 +28,13 @@ vid = cv2.VideoCapture("badapple.webm")
 
 gui.init_gui(scale)
 while running:
+    begin = time.time()
     ret, frame = vid.read()
     art = ascii.get_art(frame, scale)
     gui.render_frame(art)
+    end = time.time()
+    frame_time = end-begin
+    if frame_time < 1/fps_limit:
+        time.sleep(1/fps_limit - frame_time)
 
 vid.release()

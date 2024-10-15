@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 ## CONSTANTS
-ASCII_TABLES = " dfwbs"
+ASCII_TABLES = "dfw "
 GRAYSCALE_WEIGHTS =  np.array((0.299,0.587,0.114))
 SQUISH_FACTOR = 1 # decrease height to better match original
 global windows; windows = False
