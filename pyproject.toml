@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "t-ascii"
+version = "0.1.0"
+description = ""
+authors = ["Jan Beukes <121725474+disturbed-waffle@users.noreply.github.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+opencv-python = "*"
+numpy = "^2.1.1"
+textual = "^0.80.1"
+su-stdlibs-python = "^0.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

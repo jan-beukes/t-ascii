@@ -4,20 +4,15 @@ import numpy as np
 import os
 
 ## CONSTANTS
-ASCII_TABLES = (" .',:;xlxokXdO0KN","            .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
-                " .:,'-^*+?!|=0#X%WM@")
+ASCII_TABLES = " dfwbs"
 GRAYSCALE_WEIGHTS =  np.array((0.299,0.587,0.114))
-SQUISH_FACTOR = 0.5 # decrease height to better match original
+SQUISH_FACTOR = 1 # decrease height to better match original
 global windows; windows = False
 
 # Create ascii array 
-def get_art(image, downscale, t):
-    # Sus check for stream ended
-    try:
-        image = cv2.resize(image, (int(image.shape[1]*downscale), int(image.shape[0]*downscale*SQUISH_FACTOR)))
-    except AttributeError:
-        exit()
-        
+def get_art(image, scale):
+    image = cv2.resize(image, (int(scale), int(scale)))
+ 
     width,height = image.shape[1], image.shape[0]
     art = [""]*height
     
@@ -25,7 +20,7 @@ def get_art(image, downscale, t):
     grey = np.dot(image,GRAYSCALE_WEIGHTS)
     for y in range(height):
         for x in range(width):
-            char = ASCII_TABLES[t][int(grey[y][x] * (len(ASCII_TABLES[t])-1)/255)] # grey value * factor to get correct ascii character from brightness
+            char = ASCII_TABLES[int(grey[y][x] * (len(ASCII_TABLES)-1)/255)] # grey value * factor to get correct ascii character from brightness
             art[y] += char
     return art       
 
@@ -79,7 +74,6 @@ def main():
         exit()
         
     art = get_art(image, downscale, table)
-    output_art(art, out_mode)
     
 if __name__ == "__main__": main()
     
